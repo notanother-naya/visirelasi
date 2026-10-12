@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="id" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#020617" />
+    <meta name="description" content="VisiRelasi - Platform Analisis & Asesmen Kompatibilitas Hubungan Pasangan Pranikah" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>VisiRelasi — Asesmen Kompatibilitas Pasangan</title>
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased min-h-screen overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>

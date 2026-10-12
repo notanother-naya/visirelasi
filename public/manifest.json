@@ -1,0 +1,16 @@
+{
+  "name": "VisiRelasi - Analisis Kecocokan Visioner Hubungan Psikologi Gender",
+  "short_name": "VisiRelasi",
+  "description": "Aplikasi analisis kecocokan visioner & psikologi pasangan berbasis persepsi gender cowo dan cewe.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
