@@ -1,32 +1,89 @@
-# React + TypeScript + Vite
+# VisiRelasi — Psychological Alignment Engine
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Platform asesmen keselarasan psikologis dan kompatibilitas relasi pra-nikah / pasangan jangka panjang berbasis 5 pilar fundamental.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎯 Tentang VisiRelasi
 
-## React Compiler
+**VisiRelasi** membantu pasangan mengukur keselarasan nilai, ekspektasi, dan gaya komunikasi secara objektif melalui kuesioner terstruktur dua arah (pihak pria dan wanita). Hasil analisis menyajikan skor kompatibilitas komprehensif, pemetaan pilar kekuatan vs. area rentan, serta daftar topik krusial yang perlu didiskusikan sebelum melangkah ke jenjang komitmen serius.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 🏛️ 5 Pilar Kompatibilitas
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+1. **Finansial & Ambisi Karir** (`financial`) — Pengelolaan uang, model anggaran bersama/terpisah, ambisi karir, dan toleransi utang/investasi.
+2. **Peran Rumah Tangga & Parenting** (`domestic`) — Ekspektasi pembagian tugas domestik harian, pola asuh anak, dan keterlibatan keluarga besar.
+3. **Resolusi Konflik & Emosi** (`conflict`) — Gaya komunikasi saat berselisih, de-eskalasi emosi, kebutuhan waktu jeda (*cooling down*), dan pola kompromi.
+4. **Batasan Sosial & Privasi** (`boundaries`) — Batasan pertemanan lawan jenis, kebutuhan ruang pribadi (*me-time*), dan keterbukaan di media sosial.
+5. **Visi Jangka Panjang & Spiritualitas** (`vision`) — Arah hidup 5–10 tahun ke depan, prinsip spiritual/moral, serta target masa depan bersama.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+---
+
+## ✨ Fitur Utama
+
+- **Dual Assessment Flow**: Pengisian kuesioner mandiri untuk masing-masing pasangan.
+- **Engine Kompatibilitas Otomatis**: Algoritma pembobotan berbasis matriks keselarasan jawaban antar pasangan per pilar.
+- **Tingkatan Harmoni (Compatibility Tiers)**:
+  - 85% – 100%: *Harmoni Emas (High Synergy)*
+  - 70% – 84%: *Sinergi Sehat (Balanced)*
+  - 50% – 69%: *Perlu Kalibrasi (Active Adjustment)*
+  - < 50%: *Eksplorasi Mendalam (Critical Focus)*
+- **Laporan Komprehensif**: Identifikasi pilar terkuat, pilar paling berisiko, serta butir pertanyaan yang membutuhkan diskusi mendalam (*Critical Discussions*).
+- **Simulasi Data Cepat**: Fitur isi contoh data instan untuk demonstrasi atau pengetesan.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework & Runtime**: React 18, TypeScript 5, Vite 6
+- **Styling**: Tailwind CSS v4
+- **Icons**: Lucide React
+- **Testing**: TSX unit tests (`compatibilityEngine.test.ts`)
+
+---
+
+## 🚀 Memulai Proyek
+
+### Prasyarat
+- Node.js (>= 18)
+- npm / pnpm / yarn
+
+### Instalasi & Menjalankan Dev Server
+
+```bash
+# Install dependensi
+npm install
+
+# Jalankan server pengembangan
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Buka browser di `http://localhost:5173`.
+
+### Menjalankan Unit Test
+
+```bash
+npm test
+```
+
+### Build Produksi
+
+```bash
+npm run build
+```
+
+Hasil build siap di-deploy akan berada di direktori `dist/`.
+
+---
+
+## 📁 Struktur Direktori
+
+```text
+src/
+├── components/          # Komponen UI (Kuesioner, Ringkasan, Hasil)
+├── context/             # State management (QuizContext)
+├── data/                # Bank pertanyaan & metadata pilar
+├── types/               # Definisi tipe data TypeScript
+└── utils/               # Engine kalkulasi skor & unit test
+```
